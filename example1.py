@@ -21,6 +21,7 @@ def argmax(values):
         Location of the maximum
     vmax : int or float
         Maximum value
+        
     """
     
     N = len(values)
