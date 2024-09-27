@@ -26,6 +26,9 @@ def argmax(values):
     
     N = len(values)
     
+    if N == 0:
+        raise ValueError('Empty sequences are not supported')
+    
     imax = 0
     vmax = values[0]
     
@@ -47,8 +50,13 @@ def main():
     # Use argmax() to locale the maximum
     imax, vmax = argmax(values)
     # ADD YOUR IMPLEMENTATION HERE
-    print(f'location of max: {imax} min: {vmax}')
-
+    print(f'Max. value is {vmax} located at index {imax}')
+    
+    #Call with an empty sequence
+    try:
+        argmax([])
+    except ValueError:
+        print('Error encountered')
 
 if __name__ == '__main__':
     main()
